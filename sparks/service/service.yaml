@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-web
+  namespace: training
+  labels:
+    app.kubernetes.io/name: web-training
+spec:
+  selector:
+    app.kubernetes.io/name: web-training
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+ 

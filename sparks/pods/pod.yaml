@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-training
+  labels:
+    app.kubernets.io/name: web-training
+  spec:
+    containers:
+    - name: nginx
+      image: nginx:1.29.4
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+      ports:
+        - containerPort: 80
